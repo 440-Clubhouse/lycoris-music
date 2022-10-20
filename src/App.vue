@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import BottomPlayer from './components/BottomPlayer.vue'
 import HeaderBar from './components/HeaderBar.vue'
 import SideBar from './components/SideBar.vue'
 </script>
@@ -10,4 +11,5 @@ import SideBar from './components/SideBar.vue'
     <SideBar />
     <RouterView />
   </div>
+  <BottomPlayer />
 </template>
