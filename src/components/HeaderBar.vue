@@ -1,15 +1,19 @@
 <script setup lang="ts">
+import { useSidebarStore } from '@/stores/sidebar'
+import { storeToRefs } from 'pinia'
 import MenuIcon from './assets/MenuIcon.vue'
+
+const { isExpanded } = storeToRefs(useSidebarStore())
 </script>
 
 <template>
-  <nav class="py-2 bg-gray-100 shadow-lg flex items-center justify-between px-4">
-    <div class="flex items-center">
+  <header class="py-2 bg-gray-100 shadow-lg flex items-center justify-between px-4 fixed-top">
+    <div class="flex items-center gap-2">
       <button class="rounded-full p-2" type="button" data-mdb-ripple="true" data-mdb-ripple-color="dark"
-        data-mdb-ripple-centered="true">
+        data-mdb-ripple-centered="true" @click="isExpanded = !isExpanded">
         <MenuIcon />
       </button>
-      <div class="text-gray-900 ml-2">专辑</div>
+      <div class="text-gray-900">专辑</div>
     </div>
     <div class="flex items-center">
       <button class="mr-2" type="button" data-bs-toggle="dropdown">
@@ -21,5 +25,5 @@ import MenuIcon from './assets/MenuIcon.vue'
         </li>
       </ul>
     </div>
-  </nav>
+  </header>
 </template>
