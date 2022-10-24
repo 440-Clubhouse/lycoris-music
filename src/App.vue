@@ -7,7 +7,7 @@ import SideBar from './components/SideBar.vue'
 
 <template>
   <HeaderBar />
-  <div class="flex fixed top-14 overflow-hidden h-[calc(100vh-3.5rem)] flex-col sm:flex-row">
+  <div class="flex fixed top-14 overflow-hidden h-[calc(100vh-7.5rem)] flex-col sm:flex-row">
     <SideBar />
     <RouterView />
   </div>

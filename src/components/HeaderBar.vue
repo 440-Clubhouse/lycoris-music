@@ -3,7 +3,7 @@ import { useSidebarStore } from '@/stores/sidebar'
 import { storeToRefs } from 'pinia'
 import MenuIcon from './assets/MenuIcon.vue'
 
-const { isExpanded } = storeToRefs(useSidebarStore())
+const { isExpanded, title } = storeToRefs(useSidebarStore())
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const { isExpanded } = storeToRefs(useSidebarStore())
         data-mdb-ripple-centered="true" @click="isExpanded = !isExpanded">
         <MenuIcon />
       </button>
-      <div class="text-gray-900">专辑</div>
+      <div class="text-gray-900">{{ title }}</div>
     </div>
     <div class="flex items-center">
       <button class="mr-2" type="button" data-bs-toggle="dropdown">
